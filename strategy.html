@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATAMŪRA — Бренд-стратегия (на утверждение)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F5EE; --card:#FBFBFB; --ink:#1E1E1E; --ink-soft:#4A4A4A; --ink-mute:#6E6E6E;
+  --line:#E0DDD3; --line-soft:#ECEAE2; --grey:#BCBCBC;
+  --brand:#007484; --brand-deep:#005763; --brand-soft:#E0EEF0;
+  --navy:#284157; --navy-deep:#1A2B3A; --accent:#CFB372; --accent-soft:#EFE6CD;
+  --flag:#B5641A; --flag-soft:#F7E8D4;
+  --serif:'Cormorant',Georgia,serif; --sans:'Jost','Futura PT',system-ui,sans-serif;
+  --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px;
+  --r-md:16px; --r-lg:24px; --content:920px;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:var(--content);margin:0 auto;padding-inline:clamp(20px,5vw,40px);}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1;}
+a{color:var(--brand);}
+.eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);display:block;margin-bottom:var(--s-3);}
+.eyebrow.mute{color:var(--ink-mute);}
+
+/* cover */
+.cover{background:radial-gradient(120% 80% at 100% 0%, color-mix(in srgb,var(--brand-soft) 55%,transparent), transparent 55%), var(--bg); padding:clamp(56px,9vw,120px) 0 clamp(40px,6vw,72px);}
+.cover h1{font-size:clamp(40px,7vw,86px);font-weight:700;letter-spacing:-.02em;line-height:.98;}
+.cover h1 .grp{display:block;font-size:.26em;font-weight:600;letter-spacing:.24em;color:var(--ink-soft);margin-top:.5em;}
+.cover .lede{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,34px);font-weight:500;color:var(--brand);margin:clamp(24px,3vw,36px) 0 0;}
+.cover .sub{max-width:60ch;color:var(--ink-soft);font-size:18px;margin-top:var(--s-5);}
+.cover .meta{margin-top:var(--s-6);display:flex;flex-wrap:wrap;gap:10px;}
+.chip{display:inline-flex;gap:7px;font-size:12px;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft);}
+
+/* sections */
+section{padding-block:clamp(44px,6vw,80px);border-top:1px solid var(--line-soft);}
+.snum{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--ink-mute);}
+.shead{max-width:64ch;margin-bottom:var(--s-6);}
+.shead h2{font-size:clamp(28px,4vw,46px);letter-spacing:-.02em;margin-top:var(--s-3);}
+.shead .lead{font-size:18px;color:var(--ink-soft);margin-top:var(--s-4);}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,3vw,34px);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5);}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4);}
+p{margin:0 0 var(--s-4);}
+strong{color:var(--ink);font-weight:600;}
+.muted{color:var(--ink-mute);font-size:14px;}
+
+/* positioning statement block */
+.posbox{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:clamp(28px,4vw,52px);}
+.posbox .pe{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);}
+.posbox .pstmt{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:500;line-height:1.32;margin:var(--s-4) 0 0;}
+.posbox .pstmt b{color:#fff;font-weight:700;}
+.posbox .pstmt .hl{color:var(--accent);font-style:italic;}
+
+/* promise */
+.promise{display:flex;gap:var(--s-5);align-items:flex-start;background:var(--brand-soft);border-radius:var(--r-lg);padding:clamp(24px,3vw,40px);border-left:5px solid var(--brand);}
+.promise .pq{font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);font-weight:600;line-height:1.2;color:var(--brand-deep);}
+
+/* rtb list */
+.rtb{display:grid;gap:var(--s-4);counter-reset:r;}
+.rtb .ri{display:grid;grid-template-columns:auto 1fr;gap:var(--s-5);align-items:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s-5);}
+.rtb .ri .rn{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--brand);line-height:1;}
+.rtb .ri h4{font-size:20px;margin-bottom:6px;}
+.rtb .ri p{margin:0;font-size:14.5px;color:var(--ink-soft);}
+
+/* flag (to-confirm) */
+.flag{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--flag);background:var(--flag-soft);padding:3px 9px;border-radius:999px;white-space:nowrap;}
+.flag::before{content:'⚑';}
+.done{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#2c6e43;background:#E2EFE5;padding:3px 9px;border-radius:999px;white-space:nowrap;}
+
+/* messaging house */
+.house{display:grid;gap:var(--s-4);}
+.pillar{display:grid;grid-template-columns:220px 1fr;gap:var(--s-5);padding:var(--s-5) 0;border-bottom:1px solid var(--line-soft);align-items:start;}
+.pillar .pt{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--ink);}
+.pillar .pt span{display:block;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--brand);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+.pillar .pm{font-size:15px;color:var(--ink);margin:0 0 8px;}
+.pillar .pp{font-size:13.5px;color:var(--ink-mute);margin:0;}
+
+/* architecture */
+.arch{display:grid;gap:var(--s-4);}
+.arch-row{display:flex;flex-wrap:wrap;gap:var(--s-3);align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s-5);}
+.lockup{display:inline-flex;align-items:baseline;gap:8px;font-family:var(--serif);font-weight:700;}
+.lockup .zk{font-size:22px;color:var(--ink);}
+.lockup .by{font-size:12px;font-family:var(--sans);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);}
+.lockup .by b{color:var(--brand);}
+.tier{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+.tier.biz{background:var(--brand-soft);color:var(--brand-deep);}
+.tier.prem{background:var(--accent);color:#1E1E1E;}
+
+/* vs table */
+.vs{width:100%;border-collapse:collapse;font-size:14.5px;}
+.vs th{text-align:left;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);padding:0 var(--s-4) var(--s-3);border-bottom:1px solid var(--line);}
+.vs td{padding:var(--s-4);border-bottom:1px solid var(--line-soft);color:var(--ink-soft);vertical-align:top;}
+.vs td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+
+/* audit */
+.audit{display:grid;gap:var(--s-3);}
+.audit .ar{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s-4);align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:var(--s-4) var(--s-5);}
+.audit .ar .q{font-size:15px;color:var(--ink);}
+.audit .ar .q span{display:block;font-size:13px;color:var(--ink-mute);margin-top:2px;}
+.audit .ar .ai{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);}
+
+/* roadmap */
+.road{display:grid;gap:var(--s-3);counter-reset:rd;}
+.road .rs{display:grid;grid-template-columns:auto 1fr;gap:var(--s-5);align-items:start;padding:var(--s-4) 0;border-bottom:1px solid var(--line-soft);}
+.road .rs .rb{font-family:var(--sans);font-size:12px;font-weight:700;color:#fff;background:var(--brand);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.road .rs.is-now .rb{background:var(--accent);color:#1E1E1E;}
+.road .rs h4{font-size:18px;margin-bottom:3px;}
+.road .rs p{margin:0;font-size:14px;color:var(--ink-soft);}
+
+/* color decision */
+.colorbox{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:var(--r-md);padding:clamp(22px,3vw,32px);}
+
+.foot{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:var(--s-7) 0;border-top:0;font-size:13px;}
+.foot .fw{font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;}
+.foot .fs{font-family:var(--serif);font-style:italic;color:var(--accent);}
+
+@media(max-width:760px){.grid2,.grid3,.pillar,.rtb .ri,.audit .ar{grid-template-columns:1fr;}.posbox .pstmt{font-size:22px;}.road .rs{grid-template-columns:auto 1fr;}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<header class="cover">
+  <div class="wrap">
+    <span class="eyebrow">Бренд-стратегия · на утверждение · 2026</span>
+    <h1>ATAMŪRA<span class="grp">GROUP</span></h1>
+    <p class="lede">«Наследие, которое можно потрогать на стройке»</p>
+    <p class="sub">Этот документ отвечает не на вопрос «как мы выглядим», а на вопросы «кто мы, для кого, против кого играем и чем докажем». Визуал (цвет, шрифт, логотип) выбирается <strong>после</strong> него — из стратегии, а не вместо неё.</p>
+    <div class="meta">
+      <span class="chip">Ядро: доказанная стройка + наследие как длительность</span>
+      <span class="chip">ICP: молодая семья</span>
+      <span class="chip">Архитектура: endorsed</span>
+      <span class="chip">Ядро подтверждено фактами</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 0. ЗАЧЕМ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">00 — Зачем этот документ</span>
+      <h2>Проблема, которую решаем</h2>
+      <p class="lead">Аудит показал: визуальная система собрана, но <strong>бренд-идеи нет</strong> — есть набор правильных прилагательных, под которыми подпишется любой конкурент. При цели Top-3 это смертельно: «ещё один хороший тёплый девелопер комфорт-класса» не выигрывает.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><span class="eyebrow mute">Ловушка 1</span><p style="margin:0"><strong>Дженерик-позиция.</strong> «Среда для жизни, а не коробки» — дословно платформа ПИК. Под наши формулировки подпишутся BI Group, Highvill, Самолёт.</p></div>
+      <div class="card"><span class="eyebrow mute">Ловушка 2</span><p style="margin:0"><strong>Декларация вместо доказательства.</strong> «Наследие» доказывали тем же «наследием». Реальные отличия спрятаны как декор.</p></div>
+      <div class="card"><span class="eyebrow mute">Ловушка 3</span><p style="margin:0"><strong>Страх покупателя не снят.</strong> Эмоция №1 — финансовая («потяну ли взнос/платёж»), следом «достроят ли». Бренд не гасил ни одной.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 1. ПОКУПАТЕЛЬ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">01 — Покупатель</span>
+      <h2>Кому и против какого страха</h2>
+      <p class="lead">Бренд строится не от «что мы хотим излучать», а от «какую задачу и какой страх покупателя снимаем». Один спич-тип — остальные обслуживаются тем же хребтом.</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <span class="eyebrow">Остриё ЦА</span>
+        <h3 style="font-size:26px;margin-bottom:var(--s-4)">«Семья на первом жилье» — доминирующий сегмент (≈40–50%)</h3>
+        <p>Подтверждено живым голосом клиента (звонки + Wazzup, июнь 2026): 28–37 лет, семья с 1–2 детьми, доход ~600K–1.2M ₸/мес, сейчас аренда или у родителей; ипотека через Отбасы / 7-20-25. Триггер — второй ребёнок, надоела аренда, рост арендных ставок. Решают муж+жена, советуются с родителями; цикл 3–9 мес.</p>
+        <p><strong>Два страха (в этом порядке):</strong> ① <strong>«не потяну»</strong> — первоначальный взнос и ежемесячный платёж, «а если потеряю работу» (доминирует — клиент думает не ценой за м², а взносом/платежом); ② <strong>«обманут / не достроят»</strong> — недострой. <strong>Работа (JTBD):</strong> «перестать платить за чужое и въехать в своё, которое реально потяну», безопасность для семьи, «у нас своя квартира». <strong>Мечта:</strong> свой угол наконец — построенный на века.</p>
+        <p class="muted" style="margin:0">Вторично: инвестор под аренду (≈25–35%, средний чек ~29 млн ₸) и покупатель бизнес-таунхаусов. Боли валидированы живым голосом (High); перепись по факту (возраст/доход/доли) — уточнить в Bitrix24. Источник: ресёрч персон + VOC звонков, июнь 2026.</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow mute">Вторичные аудитории — тот же хребет «доказательство»</span>
+        <h3 style="font-size:22px;margin-bottom:var(--s-4)">Инвестор / B2G</h3>
+        <p>Решает по надёжности и портфелю, не по эмоции «наследие». Сообщение смещается на доказанный трек-рекорд, сроки, масштаб 9 ЖК.</p>
+        <p style="margin:0" class="muted">Принцип: одно ядро, разные акценты. Семье — «наследие + докажем стройкой»; инвестору — «докажем стройкой + масштаб».</p>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:var(--s-5)">
+      <div class="card">
+        <span class="eyebrow">Сегмент B · ~25–35% ICP</span>
+        <h3 style="font-size:22px;margin-bottom:var(--s-4)">Бизнес-таунхаусы — инвестор / состоявшаяся семья</h3>
+        <p><strong>JTBD:</strong> диверсифицировать капитал в материальный актив; «не положить всё в депозит/акции»; вторая (загородная) база для семьи с собственным двором. <strong>Страх:</strong> «не та доходность» / «не та ликвидность». <strong>Тон:</strong> сдержанный достаток, цифры доходности, золотой тир.</p>
+        <p style="margin:0" class="muted"><strong>CTA:</strong> «Получить расчёт доходности». Доказательство — отдельная продуктовая линейка, не зонтик бренда (см. §07).</p>
+      </div>
+      <div class="card">
+        <span class="eyebrow">Сегмент C · ~15% <span class="flag">валидировать</span></span>
+        <h3 style="font-size:22px;margin-bottom:var(--s-4)">Релокант — покупка дистанционно, без визита</h3>
+        <p><strong>JTBD:</strong> купить квартиру в Алматы/городе, не приезжая (или приехав на 1 день); удалёнка / возврат из релокации / покупка для родителей. <strong>Страх:</strong> «куплю кота в мешке», «не доверяю фото и рендеру». <strong>Тон:</strong> та же доказанная стройка, усиленная видео-приёмкой и онлайн-показом.</p>
+        <p style="margin:0" class="muted"><strong>CTA:</strong> «Онлайн-показ + видео-приёмка». Доля сегмента — оценочная, требует валидации Bitrix24 по полю «город заявителя».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ЯДРО -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">02 — Ядро бренда</span>
+      <h2>Одна мысль, которую занимаем</h2>
+      <p class="lead">Хребет «доказанная стройка» снимает страх рационально; корона «наследие как длительность» делает обычную покупку большой: дом, построенный на века, имя, которое означает наследие предков. Обе половины — на реальных активах и обе присваиваемы (имя нельзя скопировать, «доказательство вместо рендера» рынок не занял).</p>
+    </div>
+    <div class="posbox">
+      <span class="pe">Позиционирование</span>
+      <p class="pstmt">Для <b>семьи, которая боится потерять последнее на стройке</b>, ATAMŪRA — девелопер, который превращает покупку в <span class="hl">наследие, построенное на века</span> и доказывает это <b>не рендером, а реальной стройкой</b>: открытой готовностью, деньгами только после каркаса и честным платежом без сюрпризов. В отличие от тех, кто продаёт мечту на картинке, ATAMŪRA даёт мечту, <span class="hl">которую видно на площадке</span>.</p>
+    </div>
+    <div style="margin-top:var(--s-6)" class="grid2">
+      <div class="card"><span class="eyebrow">Имя как актив</span><p style="margin:0"><strong>ATA-MŪRA = «ата мұра» = наследие предков.</strong> Имя буквально означает то, что мы продаём — конкурент это не украдёт. Слоган «Мы создаём наследие» — расшифровка имени, а не натяжка. Пишем через макрон: <b>ATAMŪRA</b> (зафиксировано PM). Право на это слово заработано: 10 лет, 2000+ семей.</p></div>
+      <div class="card"><span class="eyebrow mute">Тест на присваиваемость</span><p style="margin:0">Проверяем вопросом «кто из конкурентов НЕ может сказать то же». «Наследие как длительность через имя ATA-MŪRA» — проходит абсолютно (у конкурентов имя ничего не значит). «Доказываем стройкой» — проходит только как <strong>механика</strong>, не как слово «надёжность».</p></div>
+    </div>
+    <div class="colorbox" style="margin-top:var(--s-5)"><span class="eyebrow">Архитектура: слоган-крыша + продуктовый hero</span><p style="margin:0">Имя работает на двух этажах коммуникации. <strong>«Мы создаём наследие»</strong> — корпоративный слоган-крыша (обложка, cover, тёмные слайды, корпоративная подпись, footer сайта, визитка, ATL-имидж). <strong>«Ваш дом. На века.»</strong> — продуктовый hero, точка продажи (страницы ЖК, лендинги квартир, баннеры показа, IG-пост, WhatsApp-цепочка, ATL-креатив). Полная карта применения и правила парной подачи — в §09 брендбука v2 (раздел «Архитектура слогана и hero»).</p></div>
+    <div class="colorbox" style="margin-top:var(--s-5)"><span class="eyebrow">Уточнение после 2-й adversarial-проверки</span><p style="margin:0">Хребет присваивается не словом «надёжность» (его говорят все, в т.ч. BI Group), а <strong>механикой радикальной прозрачности</strong> — открытым достоверным % готовности. И обещание держим <strong>антихрупким</strong>: «показываем правду о сроке раньше всех» ломается только реальным сокрытием (которого мы не делаем); абсолютное «всегда в срок» ломается от одного переноса и бьёт по всему бренду. Решение PM: остаёмся на прозрачности — антихрупко и присваиваемо.</p></div>
+  </div>
+</section>
+
+<!-- 3. ОБЕЩАНИЕ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">03 — Brand promise</span>
+      <h2>Одно обещание, за которое отвечаем</h2>
+      <p class="lead">Бренд должен дать одно проверяемое обещание клиенту — иначе ему нельзя доверять, потому что нечего нарушить.</p>
+    </div>
+    <div class="promise">
+<p class="pq"><b>До запуска кабинета дольщика:</b> «О любых изменениях по вашему дому мы сообщаем первыми — по вашему каналу: WhatsApp, звонок или email. Никакого замалчивания: всё, что мы знаем, узнаёте и вы».</p>
+<p style="margin-top:12px;font-size:13.5px;color:var(--ink-mute);font-style:italic">Целевой вариант после запуска кабинета дольщика: «О любых изменениях по вашему дому вы узнаёте в личном кабинете в тот же день — раньше любой другой коммуникации».</p>
+</div>
+    <p class="muted" style="margin-top:var(--s-4)">Обещание = прозрачность (антихрупкий хребет) + наследие (корона). Двуслойность нужна, чтобы коммуникация была честной уже сегодня (до запуска кабинета) и автоматически апгрейдилась после релиза кабинета дольщика без переписывания материалов. Решено PM: остаёмся на «прозрачности», а не на абсолютном «сдаём в срок» — она ломается только сокрытием, которого мы не делаем. Каждое слово подпёрто доказательством — см. ниже.</p>
+  </div>
+</section>
+
+<!-- 4. RTB -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">04 — Reason to believe</span>
+      <h2>Пять причин верить</h2>
+      <p class="lead">То, что менеджер произносит на показе вместо «мы лучшие». Формулировки — готовые к произнесению. Большинство пунктов закрыто фактами (см. аудит §09); главная причина верить — №1.</p>
+    </div>
+    <div class="rtb">
+      <div class="ri"><div class="rn">1</div><div><h4>Честный платёж сразу — вы видите реальные цифры до сделки <span class="flag" style="background:var(--brand-soft);color:var(--brand-deep)">страх №1 «не потяну»</span></h4><p>Первоначальный взнос и ежемесячный платёж по вашей цене — оба числа сразу, без приманки «от 9 900 ₸». Прямой ответ на доминирующий страх «не потяну»: считаем платёж, а не цену за м². <strong>Главная причина верить против страха №1.</strong></p></div></div>
+      <div class="ri"><div class="rn">2</div><div><h4>Ваши деньги защищены законом — деньги дольщиков только после каркаса <span class="flag" style="background:var(--brand-soft);color:var(--brand-deep)">страх №2 «не достроят»</span></h4><p>Гарантия КЖК и разрешение МИО на привлечение средств <strong>только после возведения каркаса</strong>: мы берём деньги дольщиков в рамках закона и когда дом уже вышел из земли. Прямой ответ на страх недостроя.</p></div></div>
+      <div class="ri"><div class="rn">3</div><div><h4>Стройку видно — радикальная прозрачность</h4><p>Достоверный % готовности дома в реальном времени, план vs факт — открыто. Достоверный факт мы уже считаем внутри; <span class="flag">сделать</span> личный кабинет дольщика на сайте. Присваиваемо: «надёжность» конкурент скопирует словом, открытую стройку — нет.</p></div></div>
+      <div class="ri"><div class="rn">4</div><div><h4>10 лет и 2000+ семей</h4><p>Строим с 2016 года; более 2000 семей уже живут в наших домах. Это и социальное доказательство, и заработанное право говорить «наследие» — треком, а не слоганом.</p></div></div>
+      <div class="ri"><div class="rn">5</div><div><h4>Качество видно на приёмке</h4><p>Контроль качества и приёмки на каждом этапе. Премиум доказывается не словом, а тем, что видно руками при передаче ключей.</p></div></div>
+      <div class="ri"><div class="rn">6</div><div><h4>Имя обязывает к наследию</h4><p>ATA-MŪRA = «ата мұра» = наследие предков. Право говорить «наследие» — наше по имени и по 10-летнему треку, а не по слогану. Это имя конкурент не присвоит.</p></div></div>
+    </div>
+    <p class="muted" style="margin-top:var(--s-5)"><strong>Порядок — по страхам, как в брендбуке v2:</strong> доминирует не недострой, а «потяну ли» — взнос и платёж (VOC, июнь 2026). Поэтому RTB-1 теперь «честный платёж» (страх №1), RTB-2 — «деньги после каркаса» (страх №2, главная по недострою). «Прозрачность» — <strong>двусторонняя</strong>: честные цифры платежа сразу + открытая стройка онлайн. Бренд владеет не дешевизной, а <strong>отсутствием сюрпризов — и в деньгах, и на стройке.</strong></p>
+  </div>
+</section>
+
+<!-- 5. MESSAGING HOUSE -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">05 — Дом сообщений</span>
+      <h2>Четыре столпа — теперь на доказательстве</h2>
+      <p class="lead">Те же четыре опоры из брендбука, но каждая привязана к пруфу, а не к декларации. Эмоция = столп, под ним всегда доказательство.</p>
+    </div>
+    <div class="house">
+      <div class="pillar"><div class="pt">Спокойная уверенность<span>надёжность</span></div><div><p class="pm">«Не суетимся и не давим — знаем дело и доводим до конца».</p><p class="pp">Доказательство: гарантия КЖК + разрешение МИО на привлечение средств после возведения каркаса + онлайн-% готовности. Уверенность = следствие доказанной механики.</p></div></div>
+      <div class="pillar"><div class="pt">Наследие как длительность<span>дом на века</span></div><div><p class="pm">«Первый свой угол — основа для рода, не дорогой бетон. Дом, построенный на века».</p><p class="pp">Доказательство: имя ATA-MŪRA = наследие; качество на приёмке; 2000+ семей с 2016 года. «Наследие» здесь — не про люкс, а про основательность, доступную обычной семье. <strong>Сверено с брендбуком v2 §01:</strong> формулировка опоры выровнена («Наследие / дом на века»), без скатывания в «премиальное наследие» — мы не премиум-девелопер.</p></div></div>
+      <div class="pillar"><div class="pt">Тёплая человечность<span>среда для семьи</span></div><div><p class="pm">«Здесь думают о моей семье — двор, школа, безопасность».</p><p class="pp">Доказательство: конкретная инфраструктура района, двор без машин, забота, вынесенная в метрику. Не «среда» абстрактно — конкретные блага.</p></div></div>
+      <div class="pillar"><div class="pt">Современность без понтов<span>прозрачность</span></div><div><p class="pm">«Технологии работают на меня — я вижу свою стройку».</p><p class="pp">Доказательство: открытая стройка онлайн (% готовности дома в реальном времени), а не «AI ради AI». Технология = инструмент доверия, не витрина.</p></div></div>
+    </div>
+    <p class="muted" style="margin-top:var(--s-5)"><span class="flag">проверить</span> на звонках, как звучит «наследие»: для комфорт-покупателя (первое жильё) «свой угол на века» обычно резонирует сильно; для бизнес-таунхаусов ближе «статус/актив, который не обесценится». Тон короны — по сегменту.</p>
+  </div>
+</section>
+
+<!-- 6. ОТСТРОЙКА -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">06 — Отстройка</span>
+      <h2>Против кого и чем</h2>
+      <p class="lead">Рынок РК-девелопмента продаёт мечту-рендер и говорит «надёжный застройщик» синим цветом. Наш ход — перевернуть: не обещать, а доказывать.</p>
+    </div>
+    <table class="vs">
+      <thead><tr><th>Вопрос</th><th>Рынок (BI, BAZIS, Highvill…)</th><th>ATAMŪRA</th></tr></thead>
+      <tbody>
+        <tr><td>Что продаёт</td><td>Мечту на рендере</td><td>Мечту, которую видно на стройке</td></tr>
+        <tr><td>Чем доказывает</td><td>«Надёжный застройщик» (слова)</td><td>Срок-факт, % готовности, защита денег</td></tr>
+        <tr><td>Что значит «наследие»</td><td>Метафора премиума</td><td>Имя = наследие предков; дом, построенный на века</td></tr>
+        <tr><td>Цвет-сигнал</td><td>Синий = конвенция «как все»</td><td>Решается из стратегии — см. ниже</td></tr>
+      </tbody>
+    </table>
+    <div class="colorbox" style="margin-top:var(--s-5)"><span class="eyebrow">Добавлено по 2-й проверке</span><p style="margin:0 0 12px"><strong>Чистый контр-ход против Highvill:</strong> их сила — «иностранное качество». Наш козырь обратный и неотчуждаемый — <strong>казахское имя, которое значит «наследие предков»</strong>. Иностранец не может говорить о казахском наследии: присваиваемо только нам.</p><p style="margin:0 0 12px"><strong>Во что НЕ играем (жертва):</strong> не эконом, не «метры ради метража», не гонка цены вниз, не «всё для всех». Бренд силён отказами — без них нет фокуса.</p><p style="margin:0"><strong>Метрика бренда (чем мерим успех через год):</strong> доля «знаю, что значит ATAMŪRA» + сокращение цикла сделки + рост показов/КЭВ из бренд-трафика. <span class="flag">задать</span> базовые замеры.</p></div>
+  </div>
+</section>
+
+<!-- 7. АРХИТЕКТУРА -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">07 — Архитектура портфеля</span>
+      <h2>Девять ЖК — одно качество (механизм, не лозунг)</h2>
+      <p class="lead">Портфель = два продукта: <strong>квартиры комфорт-класса</strong> (ядро, объём) и <strong>таунхаусы бизнес</strong> (отдельная линейка). Модель — <strong>endorsed</strong>: проекты сохраняют имена, мастер-бренд ATAMŪRA стоит над ними как знак качества и собирает портфель в один бренд.</p>
+    </div>
+    <div class="arch">
+      <div class="arch-row"><span class="lockup"><span class="zk">Аура</span><span class="by">от <b>ATAMŪRA</b></span></span><span class="tier biz">Комфорт · квартиры</span><span class="muted">Ядро портфеля. Комфорт-линейка — бирюзовый тир: тёплый, доступный, основательный.</span></div>
+      <div class="arch-row"><span class="lockup"><span class="zk">Таунхаусы</span><span class="by">от <b>ATAMŪRA</b></span></span><span class="tier prem">Бизнес · отдельная линейка</span><span class="muted">Отдельный продукт и покупатель. Бизнес-линейка — золотой тир. Золото = сигнал именно этой линейки, не всего бренда.</span></div>
+    </div>
+    <div class="grid3" style="margin-top:var(--s-5)">
+      <div class="card"><span class="eyebrow mute">Нейминг</span><p style="margin:0" class="muted">Имена ЖК — слова-образы (Аура, Атмосфера). Формула: «&lt;ЖК&gt; · от ATAMŪRA». Очереди/кварталы — единая конвенция. <span class="flag">подтвердить</span> правила kaz/eng.</p></div>
+      <div class="card"><span class="eyebrow mute">Наследование</span><p style="margin:0" class="muted">ЖК наследуют подпись мастера (знак, шрифт, эндорс-локап), но имеют свой акцент. Не «дом брендов», не «бренд-монолит».</p></div>
+      <div class="card"><span class="eyebrow mute">Линейки</span><p style="margin:0" class="muted">Комфорт (квартиры, ядро) vs Бизнес (таунхаусы) различаем тиром: комфорт — бирюзовый/тёплый, бизнес — золотой. Золото = сигнал бизнес-линейки, а не всего бренда.</p></div>
+    </div>
+    <div class="colorbox" style="margin-top:var(--s-5)"><span class="eyebrow">Три случая, которые модель ещё не закрыла</span><p style="margin:0"><strong>1. Миграция:</strong> «Аура»/«Атмосфера» уже известны рынку без ATAMŪRA — эндорс накатывать мягко (со-логотип 6–12 мес), не молча. <strong>2. Партнёрские ЖК и юр-структура:</strong> при 4-групповом разделении холдинга ATAMŪRA <strong>юридически может не иметь права</strong> эндорсить часть ЖК — свериться с картой 33 юрлиц. <strong>3. Два продукта:</strong> комфорт-квартиры (ядро) и бизнес-таунхаусы — разный покупатель и тон; тир вешаем на продукт/проект, а если в одном проекте смешанные очереди — на очередь. <span class="flag">проработать</span> матрицу всех проектов (квартиры/таунхаусы).</p></div>
+  </div>
+</section>
+
+<!-- 8. ЦВЕТ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">08 — Цвет (решение принято)</span>
+      <h2>Навы-флагман + бирюза-акцент <span class="done" style="vertical-align:middle;margin-left:8px">✓ решение</span></h2>
+      <p class="lead">Цвет — функция силы доказательной базы. После trust-слоя из КЖК+МИО, 2000+ семей и «открытой стройки онлайн» решение зафиксировано.</p>
+    </div>
+    <div class="colorbox" style="border-left:5px solid var(--brand);background:var(--brand-soft)">
+      <p><strong>Зафиксировано (брендбук v2 §02):</strong> <strong>НАВЫ #284157 = флагман</strong> (бренд / интерактив / тёмный хром — «банковский» сигнал безопасности для ипотечного комфорт-покупателя со страхом №1). <strong>БИРЮЗА #007484 = акцент</strong> (тепло / жизнь / семья / вторичный CTA — компенсирует холод навы). <strong>ЗОЛОТО #CFB372 = только для бизнес-линейки таунхаусов</strong> (не зонтик всего бренда). <strong>КРЕМ #F7F5EE = холст.</strong></p>
+      <p style="margin:0" class="muted">Прежняя A/B-развилка закрыта. Полная палитра, токены, WCAG-контрасты и правила применения — в брендбуке v2 §02 «Цвет и токены».</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. АУДИТ ФАКТОВ -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">09 — Что подтвердить</span>
+      <h2>Честный аудит доказательной базы</h2>
+      <p class="lead">После твоих ответов большинство слотов закрыто фактом. Осталось два рабочих пункта — и они не блокируют ядро.</p>
+    </div>
+    <div class="audit">
+      <div class="ar"><div class="ai">①</div><div class="q">Защита денег — закрыто<span>Гарантия КЖК + разрешение МИО на привлечение средств только после возведения каркаса. → RTB-1, главная причина верить.</span></div><span class="done">✓ факт</span></div>
+      <div class="ar"><div class="ai">②</div><div class="q">Срок — решено<span>Остаёмся на «прозрачности» (план/факт открыто), без абсолютного «сдаём в срок».</span></div><span class="done">✓ решено</span></div>
+      <div class="ar"><div class="ai">③</div><div class="q">Производство — снято<span>По решению PM не указываем. Убрано из RTB.</span></div><span class="done">✓ снято</span></div>
+      <div class="ar"><div class="ai">④</div><div class="q">Возраст и масштаб — закрыто<span>С 2016 года, более 2000 семей живут. → RTB-3, основание «наследия».</span></div><span class="done">✓ факт</span></div>
+      <div class="ar"><div class="ai">⑤</div><div class="q">NPS — нет<span>Замера нет; как доказательство не используем (заменено на «2000+ семей»).</span></div><span class="done">✓ учтено</span></div>
+      <div class="ar"><div class="ai">⑥</div><div class="q">Имя — закрыто<span>ATAMŪRA (макрон). Зафиксировано PM, до показа CEO.</span></div><span class="done">✓ ATAMŪRA</span></div>
+      <div class="ar"><div class="ai">⑦</div><div class="q">Портрет покупателя — закрыто (живой голос)<span>Грунт: ресёрч персон + VOC звонков/Wazzup (боли валидированы High). Осталось факт-переписать возраст/доход/доли по Bitrix24 — nice-to-have.</span></div><span class="done">✓ грунт</span></div>
+      <div class="ar"><div class="ai">⑧</div><div class="q">Остаётся: публичный кабинет дольщика<span>Достоверный факт уже есть внутри — задача: вынести % готовности в публичный кабинет дольщика.</span></div><span class="flag">сделать</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. ДОРОЖНАЯ КАРТА -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="snum">10 — Дорожная карта</span>
+      <h2>Порядок, в котором собираем бренд</h2>
+    </div>
+    <div class="road">
+      <div class="rs is-now"><div class="rb">1</div><div><h4>Бренд-стратегия — сейчас</h4><p>Этот документ: ядро, ICP, обещание, RTB, архитектура. Утвердить + закрыть аудит фактов.</p></div></div>
+      <div class="rs"><div class="rb">2</div><div><h4>Trust-слой</h4><p>Превратить доказательства в видимые элементы: онлайн-% готовности, гарантия, «сдано в срок», цифры. Это противоядие от страха и условие для бирюзы.</p></div></div>
+      <div class="rs"><div class="rb">3</div><div><h4>Тяжёлые активы</h4><p>Настоящий знак (не 4 кружка) + фотостиль/арт-дирекшн (актив №1 недвижимости).</p></div></div>
+      <div class="rs"><div class="rb">4</div><div><h4>Фиксация цвета <span class="done" style="vertical-align:middle;margin-left:8px">✓ закрыто</span></h4><p>Зафиксировано: навы-флагман + бирюза-акцент + золото только для бизнес-линейки. См. §08 и брендбук v2 §02.</p></div></div>
+      <div class="rs"><div class="rb">5</div><div><h4>Брендбук под стратегию</h4><p>Пересобрать визуальный гайд (он уже силён) — теперь поверх стратегии, а не вместо неё. Добавить носители, нейминг, CMYK, локализацию kaz/eng.</p></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fw">ATAMŪRA <span style="font-size:.6em;letter-spacing:.2em;color:rgba(255,255,255,.5)">GROUP</span></div>
+    <p class="fs" style="margin:8px 0 12px">«Наследие, которое можно потрогать на стройке»</p>
+    <p style="margin:0">Бренд-стратегия · черновик на утверждение PM · 2026. Факты с пометкой ⚑ — на подтверждение, во внешнюю коммуникацию не идут до проверки.</p>
+  </div>
+</footer>
+
+</body>
+</html>
